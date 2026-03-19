@@ -1,23 +1,27 @@
-import { Outlet } from "react-router-dom";
-import AppNav from "./AppNav";
+import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
-import styles from "./Sidebar.module.css";
+import styles from "./PageNav.module.css";
 
-function Sidebar() {
+function PageNav() {
   return (
-    <div className={styles.sidebar}>
+    <nav className={styles.nav}>
       <Logo />
-      <AppNav />
 
-      <Outlet />
-
-      <footer className={styles.footer}>
-        <p className={styles.copyright}>
-          &copy; Copyright {new Date().getFullYear()} by WorldWise Inc.
-        </p>
-      </footer>
-    </div>
+      <ul>
+        <li>
+          <NavLink to="/pricing">Pricing</NavLink>
+        </li>
+        <li>
+          <NavLink to="/product">Product</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login" className={styles.ctaLink}>
+            Login
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
-export default Sidebar;
+export default PageNav;

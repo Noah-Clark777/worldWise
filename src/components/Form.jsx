@@ -14,7 +14,6 @@ import Spinner from "./Spinner";
 import { useCities } from "../contexts/CitiesContext";
 import { useNavigate } from "react-router-dom";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
@@ -48,14 +47,14 @@ function Form() {
           setGeocodingError("");
 
           const res = await fetch(
-            `${BASE_URL}?latitude=${lat}&longitude=${lng}`
+            `${BASE_URL}?latitude=${lat}&longitude=${lng}`,
           );
           const data = await res.json();
           console.log(data);
 
           if (!data.countryCode)
             throw new Error(
-              "That doesn't seem to be a city. Click somewhere else 😉"
+              "That doesn't seem to be a city. Click somewhere else 😉",
             );
 
           setCityName(data.city || data.locality || "");
@@ -69,7 +68,7 @@ function Form() {
       }
       fetchCityData();
     },
-    [lat, lng]
+    [lat, lng],
   );
 
   async function handleSubmit(e) {

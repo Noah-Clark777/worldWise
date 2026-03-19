@@ -28,7 +28,7 @@ const FAKE_USER = {
 function AuthProvider({ children }) {
   const [{ user, isAuthenticated }, dispatch] = useReducer(
     reducer,
-    initialState
+    initialState,
   );
 
   function login(email, password) {
@@ -54,5 +54,4 @@ function useAuth() {
   return context;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export { AuthProvider, useAuth };
