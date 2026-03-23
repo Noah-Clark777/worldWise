@@ -1,16 +1,43 @@
-# React + Vite
+WorldWise – Travel Tracking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A geographic travel tracking application that allows users to log, visualize, and manage the places they’ve visited on an interactive map.
+This project focuses on combining map-based UI, state management, and dynamic data handling to create a real-world, data-driven user experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features:
+* Interactive map to explore locations
+* Add and manage visited cities
+* Store notes/details for each location
+* Dynamic UI updates based on user interactions
+* Navigation between map and app views
+* Responsive design for multiple screen sizes
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tech Stack:
+* Frontend: React
+* State Management: Context API / useReducer
+* Routing: React Router
+* Maps: Leaflet
+* Styling: CSS Modules
+* Tooling: Vite
+* Deployment: Netlify
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Architecture & Key Concepts:
+* Global State Management
+Managed application-wide data (cities, selected location) using Context API to avoid prop drilling.
+
+* Reducer Pattern
+Used useReducer for predictable state transitions and better scalability.
+
+* Map Integration
+Synced UI state with map interactions (clicking, selecting, rendering markers).
+
+* Component-Driven Design
+Built reusable UI components to separate concerns and improve maintainability.
+
+* Routing & Navigation
+Structured multi-page navigation with protected and dynamic routes.
+
+* Asynchronous Data Handling
+Managed loading states and side effects for a smooth user experience.
